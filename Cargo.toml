@@ -4,8 +4,8 @@ version = "0.2.5"
 edition = "2021"
 authors = ["JoonHo Son <joonho.son@me.com>"]
 repository = "https://github.com/JoonHoSon/rust-util"
-keywords = ["AES", "SHA", "RSA", "IO", "KOREAN"]
-description = "SHA(256/512) hash, AES/RSA 암복화, 한글, I/O 및 날짜 관련 함수 모음 입니다."
+keywords = ["ENCRYPT", "UTILITY", "KOREAN"]
+description = "SHA(256/512) hash, AES/RSA 암복화, 한글, I/O, 유효성 검사 및 날짜 관련 함수 모음 입니다."
 license = "MIT"
 resolver = "2"
 
@@ -13,8 +13,9 @@ resolver = "2"
 string = []
 io = []
 date = []
+validate = []
 encrypt = ["sha2/default", "openssl/default"]
-default = ["string", "encrypt", "io"]
+default = ["string", "encrypt", "io", "validate"]
 
 [profile.dev]
 opt-level = 0

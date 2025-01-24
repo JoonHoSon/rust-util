@@ -190,6 +190,7 @@ lazy_static! {
 /// 주어진 이메일 주소의 유효성 검사 결과를 반환한다.
 ///
 /// 만약 대상 문자열이 `None`일 경우 [`MissingArgumentError`]를 반환한다.
+#[deprecated(note = "`cliff3_util::validate::validate_email` 사용")]
 pub fn validate_email(target: Option<&str>) -> Result<bool, MissingArgumentError> {
     // TODO(joonho): 2023-10-03 한글 도메인 및 ID 포함
     match target {
@@ -457,7 +458,7 @@ pub fn generate_random_string(length: u32) -> Option<String> {
 
     while count < length {
         let index = random.gen_range(0..=source_size);
-        
+
         result.push(RANDOM_SOURCE.get(index).unwrap());
 
         count += 1;
@@ -485,7 +486,7 @@ pub fn generate_random_string_with_spec(length: u32) -> Option<String> {
 
     while count < length {
         let index = random.gen_range(0..=source_size);
-        
+
         result.push(RANDOM_SOURCE_SPEC.get(index).unwrap());
 
         count += 1;

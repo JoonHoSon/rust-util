@@ -6,6 +6,7 @@
 //! - `encrypt` - 암복호화 및 Hash 관련 함수 활성화
 //! - `io` - I/O 유틸리티 관련 함수 활성화
 //! - `date` - 날짜(chrono) 관련 함수 활성화
+//! - `validate` - 유효성 검사 관련 함수 활성화
 //! - `default` - 위 함수 모두 포함
 
 pub mod error;
@@ -23,3 +24,6 @@ pub mod io_util;
 
 #[cfg(any(feature = "date", feature = "default"))]
 pub mod date_util;
+
+#[cfg(any(feature = "validate", feature = "default"))]
+pub mod validate;
