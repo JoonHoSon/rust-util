@@ -34,7 +34,7 @@ use chrono_tz::Tz;
 /// ```rust
 /// use chrono_tz::Tz;
 /// use chrono::{DateTime, Datelike, Timelike};
-/// use cliff3_util::date_util::local_datetime_to_utc;
+/// use cliff3_util::date::local_datetime_to_utc;
 ///
 /// // KST 2024-11-22 10:29:48
 /// // UTC 2024-11-22 01:29:48
@@ -113,7 +113,7 @@ pub fn local_datetime_to_utc(
 /// // KST 2024-09-12 08:47:58
 /// use chrono_tz::Tz;
 /// use chrono::{DateTime, Datelike, Timelike};
-/// use cliff3_util::date_util::utc_datetime_to_local;
+/// use cliff3_util::date::utc_datetime_to_local;
 ///
 /// let datetime = "20240911234758";
 /// let pattern = "%Y%m%d%H%M%S";
@@ -175,7 +175,7 @@ pub fn utc_datetime_to_local(
 ///
 /// ```rust
 /// use chrono::{DateTime, TimeZone, Utc};
-/// use cliff3_util::date_util::get_latest_day;
+/// use cliff3_util::date::get_latest_day;
 ///
 /// // leap month 2024
 /// // normal     2025
@@ -222,7 +222,7 @@ pub fn get_latest_day<T: TimeZone + Sized>(datetime: &DateTime<T>) -> u32 {
 ///
 /// ```rust
 /// use chrono::{Utc, Datelike, TimeZone, NaiveDate, NaiveTime, NaiveDateTime};
-/// use cliff3_util::date_util::get_week_start_end;
+/// use cliff3_util::date::get_week_start_end;
 /// // 1978-06-22
 /// // 일요일 : 06-25
 /// // 월요일 : 06-19
@@ -254,9 +254,7 @@ pub fn get_week_start_end(datetime: &NaiveDateTime) -> (NaiveDateTime, NaiveDate
 
 #[cfg(test)]
 mod tests {
-    use crate::date_util::{
-        get_latest_day, get_week_start_end, local_datetime_to_utc, utc_datetime_to_local,
-    };
+    use super::{get_latest_day, get_week_start_end, local_datetime_to_utc, utc_datetime_to_local};
     use chrono::{
         DateTime, Datelike, NaiveDate, NaiveDateTime, NaiveTime, TimeZone, Timelike, Utc,
     };

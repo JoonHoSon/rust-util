@@ -37,6 +37,16 @@ $ sudo apt install build-essential pkg-config libssl-dev
 
 # 변경 사항
 
+## 0.2.6
+
+- validate module 추가
+  - string_util::validate_email 이동
+- 다음 module 명칭 변경
+  - ~~date_util~~ => date
+  - ~~encrypt_util~~ => encrypt
+  - ~~io_util~~ => io
+  - ~~string_util~~ => string
+
 ## 0.2.5
 
 - 특수문자를 포함하는 무작위 문자열 생성 함수 추가(generate_random_string_with_spec)

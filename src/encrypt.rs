@@ -129,7 +129,7 @@ pub enum AES_TYPE {
 /// # Example
 ///
 /// ```rust
-/// use cliff3_util::encrypt_util::{make_sha_hash, SHA_TYPE};
+/// use cliff3_util::encrypt::{make_sha_hash, SHA_TYPE};
 ///
 /// let mut result = make_sha_hash(SHA_TYPE::SHA_256, "test".as_bytes(), Some("salt"));
 ///
@@ -205,7 +205,7 @@ pub fn make_sha_hash(
 /// # Example
 ///
 /// ```rust
-/// use cliff3_util::encrypt_util::{make_sha_hash_string, SHA_TYPE};
+/// use cliff3_util::encrypt::{make_sha_hash_string, SHA_TYPE};
 ///
 /// let result = make_sha_hash_string(SHA_TYPE::SHA_256, "test".as_bytes(), Some("salt"));
 ///
@@ -400,7 +400,7 @@ pub fn validate_salt(salt: Option<&[u8]>) -> Result<(), InvalidArgumentError> {
 /// [openssl_enc_options]: https://www.openssl.org/docs/manmaster/man1/openssl-enc.html
 ///
 /// ```rust
-/// use cliff3_util::encrypt_util::{aes_encrypt, AES_TYPE, AESResult};
+/// use cliff3_util::encrypt::{aes_encrypt, AES_TYPE, AESResult};
 ///
 /// let plain_text = "This 이것 that 저것";
 /// let secret = "this is secret key";
@@ -500,8 +500,8 @@ pub fn aes_encrypt(
 /// # Example
 ///
 /// ```rust
-/// use cliff3_util::encrypt_util::{aes_decrypt, aes_encrypt, AES_TYPE, AESResult};
-/// use cliff3_util::encrypt_util::AES_TYPE::AES_128;
+/// use cliff3_util::encrypt::{aes_decrypt, aes_encrypt, AES_TYPE, AESResult};
+/// use cliff3_util::encrypt::AES_TYPE::AES_128;
 ///
 /// let plain_text = "abcd한글";
 /// let salt = "4s8sdf*!"; // 8 bytes
@@ -849,7 +849,7 @@ pub fn generate_rsa_keypair(bit_size: RSA_BIT) -> Result<Rsa<Private>, CryptoErr
 /// # Example
 ///
 /// ```rust
-/// use cliff3_util::encrypt_util::{RSA_BIT, rsa_encrypt_without_key};
+/// use cliff3_util::encrypt::{RSA_BIT, rsa_encrypt_without_key};
 ///
 /// const PLAIN_TEXT: &str = "이것은 테스트 입니다.";
 /// let result =rsa_encrypt_without_key(PLAIN_TEXT.as_bytes(), RSA_BIT::B_4096);
@@ -922,7 +922,7 @@ pub fn rsa_encrypt_without_key(
 /// # Example
 ///
 /// ```rust
-/// use cliff3_util::encrypt_util::{RSA_BIT, rsa_decrypt, rsa_encrypt_without_key, RSAResult};
+/// use cliff3_util::encrypt::{RSA_BIT, rsa_decrypt, rsa_encrypt_without_key, RSAResult};
 ///
 /// let plaint_text = "This 이것 that 저것";
 /// let result = rsa_encrypt_without_key(plaint_text.as_bytes(), RSA_BIT::B_2048);

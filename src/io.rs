@@ -43,7 +43,7 @@ impl DirectoryDateType {
     /// # Example
     ///
     /// ```rust
-    /// use cliff3_util::io_util::DirectoryDateType;
+    /// use cliff3_util::io::DirectoryDateType;
     /// use chrono::DateTime;
     ///
     /// let now = chrono::Local::now();
@@ -114,7 +114,7 @@ impl DirectoryDateType {
 /// ```rust
 /// use std::path::Path;
 /// use chrono::DateTime;
-/// use cliff3_util::io_util::{generate_path, DirectoryDateType};
+/// use cliff3_util::io::{generate_path, DirectoryDateType};
 ///
 /// let now = chrono::Local::now();
 /// let compare_dir_name = DirectoryDateType::YYYYMMDD.generate_path_string(&now, Some("_"));
@@ -169,7 +169,7 @@ pub fn generate_path(
 
 #[cfg(test)]
 mod tests {
-    use crate::io_util::{generate_path, DirectoryDateType};
+    use super::{generate_path, DirectoryDateType};
     use std::path::Path;
 
     #[test]
